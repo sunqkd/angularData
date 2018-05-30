@@ -1,0 +1,14 @@
+<p>
+	<!--差值表达式和属性绑定是一个东西、通常使用差值表达式-->
+	<!--属性绑定-->
+	<img [src]="imgUrl" alt="">
+	<!--差值表达式-->
+	<img src="{{imgUrl}}" alt="">
+	<!--dom属性和HTML属性-->
+	<input type="text" value="Tom" (input)="doOnInput($event)">
+	<!--button  disabled Dom属性  添加杉树属性 让button 禁用或者启用-->
+	<button disabled>点我</button>、
+	
+	<!--dom 属性-->
+	<!-- <button [disabled]="asd">点我</button> -->
+</p>
