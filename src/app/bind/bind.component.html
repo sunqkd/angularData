@@ -1,5 +1,5 @@
 <p>
-	<!--差值表达式和属性绑定是一个东西、通常使用差值表达式-->
+	<!--差值表达式和属性绑定是一个东西、通常使用差值表达式差值表达式属于dom属性绑定-->
 	<!--属性绑定-->
 	<img [src]="imgUrl" alt="">
 	<!--差值表达式-->
@@ -7,8 +7,43 @@
 	<!--dom属性和HTML属性-->
 	<input type="text" value="Tom" (input)="doOnInput($event)">
 	<!--button  disabled Dom属性  添加杉树属性 让button 禁用或者启用-->
-	<button disabled>点我</button>、
-	
+	<button disabled>点我</button>
+
 	<!--dom 属性-->
-	<!-- <button [disabled]="asd">点我</button> -->
+	<button [disabled]="asd">点我</button>
 </p>
+
+<table>
+	<tr>
+		<!--cospan 无dom属性  差值表达式属于dom属性绑定 所以会报错-->
+		<!-- <td colspan="{{1+1}}"></td>慕课网</td> -->
+
+		<td [attr.colspan]="size">慕课网</td>
+		<td>点击</td>
+	</tr>
+</table>
+
+<div class="a b c">
+	慕课网
+</div>
+<!--全体换 全有或者全无替换-->
+<div [class]="divClass">
+	样式全体换
+</div>
+<!--增加样式-->
+<div class="a b" [class.c]="isBig">
+	增加样式
+</div>
+<!--样式切换-->
+<div [ngClass]="changeClass">
+	样式选择
+</div>
+
+<!--内联样式绑定-->
+<div [style.color]="isDev? 'pink' : 'blue'">
+	内联样式绑定
+</div>
+<div [style.font-size.em]="isDev? 3 : 1">
+	内联样式绑定
+</div>
+<div [ngStyle]="isStyle">多个内敛样式</div>
