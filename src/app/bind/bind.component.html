@@ -1,12 +1,15 @@
 <p>
 	<!--差值表达式和属性绑定是一个东西、通常使用差值表达式差值表达式属于dom属性绑定-->
+	<!--html属性初始化dom属性任务完成、html属性不改变、dom属性可以改变-->
 	<!--属性绑定-->
 	<img [src]="imgUrl" alt="">
 	<!--差值表达式-->
 	<img src="{{imgUrl}}" alt="">
 	<!--dom属性和HTML属性-->
 	<input type="text" value="Tom" (input)="doOnInput($event)">
-	<!--button  disabled Dom属性  添加杉树属性 让button 禁用或者启用-->
+	<!--disabled html 属性  此时默认的 disabled dom 属性就会初始化为true
+		添加或删除 disabled  html属性 会禁用或者启用按钮-- html属性的值是无关紧要的
+	-->
 	<button disabled>点我</button>
 
 	<!--dom 属性-->
