@@ -4,7 +4,17 @@ html属性初始化dom属性任务完成、html属性不改变、dom属性可以
 
 dom 属性绑定模板： []=""
 
-HTML 属性绑定模板：
+HTML 属性绑定模板：[attr.colspan]= " "
+
+CSS类绑定 模板：
+(1) 完全替换 <div class="a b" [class]="someException"></div>
+(2)	追加样式 <div [class.special]="isSpecial"></div>
+(3)	控制多个CSS类是否显示 <div [ngClass]="{aaa:isA,bbb:isB}"></div>
+
+样式绑定 模板：
+(1)单个样式 <button [style.color]="isSpecial? 'red': 'green' "></button>
+(2)多种样式 <button [ngStyle]="{'font-style':this.CanSave ? 'italic' : 'normal'}"></button>
+
 -->
 <!--属性绑定-->
 <img [src]="imgUrl" alt="">
@@ -15,7 +25,6 @@ HTML 属性绑定模板：
 <!--disabled html 属性  此时默认的 disabled dom 属性就会初始化为true
 	添加或删除 disabled  html属性 会禁用或者启用按钮-- html属性的值是无关紧要的
 -->
-
 <button [disabled]="asd">点我</button>
 <button (click)="changeasd()">点我</button>
 
