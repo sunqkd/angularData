@@ -64,7 +64,6 @@ html属性初始化dom属性任务完成、html属性不改变、dom属性可以
 
 
 
-
 <!--样式绑定-->
 <div [style.color]="isDev? 'pink' : 'blue'">
 	内联样式绑定
@@ -73,3 +72,18 @@ html属性初始化dom属性任务完成、html属性不改变、dom属性可以
 	内联样式绑定
 </div>
 <div [ngStyle]="isStyle">多个内敛样式</div>
+
+
+
+<!--单项绑定
+1、模板到控制器
+2、控制器到模板
+-->
+<input type="text" (input)="inputEvent()">
+<input type="text" [value]="name">
+
+<!--双向绑定
+语法：盒子里面装香蕉
+-->
+
+<input  [(ngModel)]="modelName"> {{modelName}}
