@@ -1,3 +1,8 @@
+<!--响应式模式就是观察者模式的实现-->
 <p>
 	响应式编程：异步数据流编程
 </p>
+<!--模板本地变量的语法帮助获得HTML元素的引用-->
+<input type="text" (keyup)="onKey($event)">
+
+<input #myFilder type="text" (keyup)="onKeyFilder(myFilder)">
