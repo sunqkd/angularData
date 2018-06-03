@@ -1,0 +1,16 @@
+<p>
+	管道:
+</p>
+<!--
+	内置管道：
+	lowercase: 小写
+	uppercase: 大写
+	date：日期管道 可以接受参数(日期样式) 注：HH代表24小时制 hh代表12小时制
+	number: 格式化数字 可接受参数 2.2-2（表示两位整数 两位小数  1-4 最少一位小数最多4位小数）
+	async: 异步 用来处理异步流
+	自定义管道
+
+-->
+<p>我的生日是：{{birthday | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+<p>圆周率：{{pi | number:'2.2-2'}}</p>
+<p>自定义管道： {{size | multiple: '2' }}</p>

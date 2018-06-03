@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import 'rxjs/add/observable/from'
+import { FormControl } from '@angular/forms';
+import 'rxjs/Rx'
 
 @Component({
 	selector: 'app-reactive',
@@ -24,15 +26,29 @@ fromEvent()  流的源头发射的就是一个事件
 3、在流结束的时候被调用（可选）
 */
 
+/*
+FormControl 处理表单事件
+当input输入框的值发生变化时 serachInput 对象就会发射一个叫valueChanges(被观察者即 流)的事件
+
+然后就可以订阅这个事件
+*/
+	serachInput:FormControl = new FormControl()
 	constructor() {
-		Observable.from([1, 2, 3, 4]) // 创建一个数组流 （被观察者）
-			.filter(e => e % 2 == 0) // 过滤偶数
-			.map(e => e * e) // 映射流
-			.subscribe( // 订阅 （观察者）
-				e => console.log(e),
-				err => console.error(err), // 可选
-				() => console.log("流结束了") // 可选
-			)
+		/**订阅input框 */
+
+		this.serachInput.valueChanges
+		.debounceTime(500) // 停留500ms
+		.subscribe(
+			stockCode => this.getStockInfo(stockCode)
+		)
+		// Observable.from([1, 2, 3, 4]) // 创建一个数组流 （被观察者）
+		// 	.filter(e => e % 2 == 0) // 过滤偶数
+		// 	.map(e => e * e) // 映射流
+		// 	.subscribe( // 订阅 （观察者）
+		// 		e => console.log(e),
+		// 		err => console.error(err), // 可选
+		// 		() => console.log("流结束了") // 可选
+		// 	)
 	}
 
 	onKey(event){
@@ -42,6 +58,10 @@ fromEvent()  流的源头发射的就是一个事件
 
 	onKeyFilder(event){
 		console.log(event)
+	}
+
+	getStockInfo(stockCode:string){
+		console.log(stockCode)
 	}
 	ngOnInit() {
 

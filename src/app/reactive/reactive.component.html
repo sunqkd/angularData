@@ -6,3 +6,8 @@
 <input type="text" (keyup)="onKey($event)">
 
 <input #myFilder type="text" (keyup)="onKeyFilder(myFilder)">
+
+<!--
+	formControl为 angular 提供的一个属性
+-->
+<input [formControl]="serachInput" type="text" >
